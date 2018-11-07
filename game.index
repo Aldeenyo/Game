@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#player1{
+			position:absolute;
+			top:300px;
+			left:400px;
+			}
+			#player2{
+			position:absolute;
+			top:300px;
+			right:400px;
+			color:green;
+			}
+		</style>
+		<script>
+			var x = 400;
+			var y = 300;
+			document.addEventListener("keyup", function(e){
+				if (e.keyCode == 68) {
+					moveRight();
+				}	
+			});
+			function moveRight(){
+			x = x+10;
+			document.getElementById("player1").style.left=x+"px"
+			}
+			document.addEventListener("keyup", function(e){
+				if (e.keyCode == 65) {
+					moveLeft();
+				}
+			});
+			function moveLeft(){
+				x = x-10;
+				document.getElementById("player1").style.left=x+"px"
+			};
+			var joomp = 0
+			document.addEventListener("keyup",function(e){
+				if(e.keyCode == 87){
+					joomp = joomp+1;
+					console.log(joomp);
+					if(joomp<=5){
+					jump()
+					}else if (joomp == 6){
+					alert("no more jumps for " +player1);
+					}
+				}
+			});
+			function jump(){
+				jumpUp();
+				setTimeout(jumpUp,500);
+				setTimeout(jumpDown, 1000);
+			}
+			function jumpUp(){
+				y = y-80
+				document.getElementById("player1").style.top=y+"px"
+			};
+			function jumpDown(){
+				y = y+160
+				document.getElementById("player1").style.top=y+"px"
+			
+			};
+			var x2 = 400;
+			var y2 = 300;
+			document.addEventListener("keyup", function(e){
+				if (e.keyCode == 37) {
+					moveRight2();
+				}	
+			});
+			function moveRight2(){
+			x2 = x2+10
+			document.getElementById("player2").style.right=x2+"px"
+
+			}
+			document.addEventListener("keyup", function(e){
+				if (e.keyCode == 39) {
+					moveLeft2();
+				}
+			});
+			function moveLeft2(){
+				x2 = x2-10
+				document.getElementById("player2").style.right=x2+"px"
+			};
+			var joomp2 = 0
+			document.addEventListener("keyup",function(e){
+				if(e.keyCode == 38){
+					joomp2 = joomp2+1
+					if(joomp2 <=5){
+						jump2();
+					}else if(joomp2 == 6){
+					alert("you ran out of jumps "+player2+", you idiot");
+					}
+				}
+			});
+			function jump2(){
+				jumpUp2();
+				setTimeout(jumpUp2,500);
+				setTimeout(jumpDown2, 1000);
+			}
+			function jumpUp2(){
+				y2 = y2-80
+				document.getElementById("player2").style.top=y2+"px"
+			};
+			function jumpDown2(){
+				y2= y2+160
+				document.getElementById("player2").style.top=y2+"px"
+			};
+		</script>
+	</head>
+	<body>
