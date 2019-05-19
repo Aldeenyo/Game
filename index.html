@@ -118,15 +118,13 @@
 			document.addEventListener("keyup", function(e){
 				if (e.keyCode == 76) {
 					moveLeft2();
-					setTimeout(moveLeft2,62.5);
-					setTimeout(moveLeft2,62.5);
-					setTiemout(moveLeft2,62.5);
+					setTimeout(moveLeft2,250);22
 				}
 				
 				
 			});
 			function moveLeft2(){
-				x2 = x2+2.5
+				x2 = x2+10
 				document.getElementById("player2").style.left=x2+"px"
 				console.log(x2);
 				
